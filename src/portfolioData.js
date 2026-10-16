@@ -1,18 +1,89 @@
 const github = 'https://github.com/NazirSamaan';
 const starterSkills = [
-  ['Python', 'Py', '#ffce54', 'Data Analytics'], ['SQL', '▤', '#25c5ff', 'Databases'], ['Power BI', '▥', '#f8c83b', 'Data Analytics'], ['Excel', 'X', '#28c88b', 'Data Analytics'], ['Machine Learning', '✺', '#a78bfa', 'Data Analytics'], ['Data Visualization', '▥', '#24c9ed', 'Data Analytics'],
-  ['HTML', '5', '#fa754a', 'Web Development'], ['CSS', '3', '#528dff', 'Web Development'], ['JavaScript', 'JS', '#f5df4d', 'Programming'], ['React', '⚛', '#5cd9f5', 'Web Development'], ['PHP', 'php', '#a5a7e9', 'Programming'], ['Flutter', '◩', '#40c8ef', 'Mobile Development'],
-  ['Java', '♨', '#ff845d', 'Programming'], ['Node.js', '⬡', '#86ca67', 'Web Development'], ['MySQL', 'my', '#e9ac51', 'Databases'], ['GitHub', '⌘', '#e9f1fa', 'Tools'], ['VS Code', '⋈', '#39afff', 'Tools'],
-];
-const starterProjects = [
-  { title: 'Wildlife Reporting Mobile App', category: 'Mobile App', tags: ['Flutter', 'PHP', 'MySQL'], visual: 'wildlife', number: '01', description: 'A deployed Wildlife Management mobile app and admin dashboard built to digitize wildlife tracking and incident reporting.', features: ['Wildlife tracking and incident reporting', 'Mobile application and administrative dashboard', 'Updates informed by field officers’ feedback', 'Tested and reviewed system updates before deployment'] },
-  { title: 'Orchid E-Commerce Website', category: 'Web Development', tags: ['PHP', 'MySQL', 'Web Development'], visual: 'orchid', number: '02', description: 'An online storefront concept with a curated catalog and a streamlined shopping experience.', features: ['Product browsing and search', 'Cart and checkout interface', 'Product management dashboard'] },
-  { title: 'Teen Phone Addiction Analysis', category: 'Data Analytics', tags: ['Python', 'Machine Learning', 'Data Analytics'], visual: 'dashboard', number: '03', description: 'An exploratory analytics concept studying screen time, habits, and daily wellbeing.', features: ['Interactive data exploration', 'Screen-time trend visualization', 'Insights presented in a clear dashboard'] },
-  { title: 'Process Mining Analysis', category: 'Data Analytics', tags: ['Celonis', 'ProM', 'Data Analytics'], visual: 'process', number: '04', description: 'A process exploration concept that turns event logs into understandable workflows.', features: ['Process mapping', 'Workflow performance insights', 'Bottleneck identification'] },
-  { title: 'Customer Segmentation Analysis', category: 'Machine Learning', tags: ['Python', 'Clustering', 'Data Visualization'], visual: 'scatter', number: '05', description: 'A customer analytics concept exploring patterns through clustering and visualization.', features: ['Customer grouping', 'Cluster visualization', 'Segment-level insights'] },
-];
-
-const additionalSkills = [
+  [
+    "Python",
+    "Py",
+    "#ffce54",
+    "Data Analytics"
+  ],
+  [
+    "SQL",
+    "▤",
+    "#25c5ff",
+    "Databases"
+  ],
+  [
+    "Power BI",
+    "▥",
+    "#f8c83b",
+    "Data Analytics"
+  ],
+  [
+    "Excel",
+    "X",
+    "#28c88b",
+    "Data Analytics"
+  ],
+  [
+    "Machine Learning",
+    "✺",
+    "#a78bfa",
+    "Data Analytics"
+  ],
+  [
+    "Data Visualization",
+    "▥",
+    "#24c9ed",
+    "Data Analytics"
+  ],
+  [
+    "HTML",
+    "5",
+    "#fa754a",
+    "Web Development"
+  ],
+  [
+    "CSS",
+    "3",
+    "#528dff",
+    "Web Development"
+  ],
+  [
+    "JavaScript",
+    "JS",
+    "#f5df4d",
+    "Programming"
+  ],
+  [
+    "React",
+    "⚛",
+    "#5cd9f5",
+    "Web Development"
+  ],
+  [
+    "PHP",
+    "php",
+    "#a5a7e9",
+    "Programming"
+  ],
+  [
+    "Flutter",
+    "◩",
+    "#40c8ef",
+    "Mobile Development"
+  ],
+  [
+    "Java",
+    "♨",
+    "#ff845d",
+    "Programming"
+  ],
+  [
+    "MySQL",
+    "my",
+    "#e9ac51",
+    "Databases"
+  ],
   [
     "Power Query",
     "PQ",
@@ -26,15 +97,9 @@ const additionalSkills = [
     "Data Analytics"
   ],
   [
-    "Excel VLOOKUP & Pivot Tables",
-    "X",
-    "#28c88b",
-    "Data Analytics"
-  ],
-  [
-    "Systems Support",
-    "IT",
-    "#39afff",
+    "GitHub",
+    "⌘",
+    "#e9f1fa",
     "Tools"
   ],
   [
@@ -42,73 +107,14 @@ const additionalSkills = [
     "QA",
     "#a78bfa",
     "Tools"
-  ],
-  [
-    "Agile Methodologies",
-    "Ag",
-    "#28c88b",
-    "Tools"
-  ],
-  [
-    "Requirements Analysis",
-    "RA",
-    "#25c5ff",
-    "Administration & Operations"
-  ],
-  [
-    "Minutes of Meetings",
-    "MoM",
-    "#f8c83b",
-    "Administration & Operations"
-  ],
-  [
-    "Process Documentation",
-    "Doc",
-    "#a78bfa",
-    "Administration & Operations"
-  ],
-  [
-    "Asset & Resource Tracking",
-    "AT",
-    "#28c88b",
-    "Administration & Operations"
-  ],
-  [
-    "Quality Auditing",
-    "QA",
-    "#39afff",
-    "Administration & Operations"
-  ],
-  [
-    "Incident Reporting & Tracking",
-    "IR",
-    "#25c5ff",
-    "Field Safety & Compliance"
-  ],
-  [
-    "Field Safety",
-    "FS",
-    "#f8c83b",
-    "Field Safety & Compliance"
-  ],
-  [
-    "Compliance Monitoring",
-    "CM",
-    "#28c88b",
-    "Field Safety & Compliance"
-  ],
-  [
-    "Risk Assessment",
-    "RA",
-    "#fa754a",
-    "Field Safety & Compliance"
-  ],
-  [
-    "Community Briefings",
-    "CB",
-    "#a78bfa",
-    "Field Safety & Compliance"
   ]
+];
+const starterProjects = [
+  { title: 'Wildlife Reporting Mobile App', category: 'Mobile App', tags: ['Flutter', 'PHP', 'MySQL'], visual: 'wildlife', number: '01', description: 'A deployed Wildlife Management mobile app and admin dashboard built to digitize wildlife tracking and incident reporting.', features: ['Wildlife tracking and incident reporting', 'Mobile application and administrative dashboard', 'Updates informed by field officers’ feedback', 'Tested and reviewed system updates before deployment'] },
+  { title: 'Orchid E-Commerce Website', category: 'Web Development', tags: ['PHP', 'MySQL', 'Web Development'], visual: 'orchid', number: '02', description: 'An online storefront concept with a curated catalog and a streamlined shopping experience.', features: ['Product browsing and search', 'Cart and checkout interface', 'Product management dashboard'] },
+  { title: 'Teen Phone Addiction Analysis', category: 'Data Analytics', tags: ['Python', 'Machine Learning', 'Data Analytics'], visual: 'dashboard', number: '03', description: 'An exploratory analytics concept studying screen time, habits, and daily wellbeing.', features: ['Interactive data exploration', 'Screen-time trend visualization', 'Insights presented in a clear dashboard'] },
+  { title: 'Process Mining Analysis', category: 'Data Analytics', tags: ['Celonis', 'ProM', 'Data Analytics'], visual: 'process', number: '04', description: 'A process exploration concept that turns event logs into understandable workflows.', features: ['Process mapping', 'Workflow performance insights', 'Bottleneck identification'] },
+  { title: 'Customer Segmentation Analysis', category: 'Machine Learning', tags: ['Python', 'Clustering', 'Data Visualization'], visual: 'scatter', number: '05', description: 'A customer analytics concept exploring patterns through clustering and visualization.', features: ['Customer grouping', 'Cluster visualization', 'Segment-level insights'] },
 ];
 
 export const defaultContent = {
@@ -130,7 +136,7 @@ export const defaultContent = {
   "aboutImage": `${process.env.PUBLIC_URL || ""}/images/graduation.jpeg`
 }, github},
   projects: starterProjects.map((p,i)=>({...p,id:'project-'+i,isConcept:i!==0,image:'',sourceUrl:'',liveUrl:''})),
-  skills: [...starterSkills,...additionalSkills].map((s,i)=>({id:'skill-'+i,name:s[0],symbol:s[1],color:s[2],category:s[3]})),
+  skills: starterSkills.map((s,i)=>({id:'skill-'+i,name:s[0],symbol:s[1],color:s[2],category:s[3]})),
   experience: [
   {
     "id": "forestry-2026",

@@ -58,7 +58,7 @@ test('theme, mobile navigation, and skill filters respond to input', () => {
   expect(container.querySelector('.menu-toggle').getAttribute('aria-expanded')).toBe('false');
   const tools = Array.from(container.querySelectorAll('[aria-label="Filter skills"] button')).find(button => button.textContent === 'Tools');
   click(tools);
-  expect(container.querySelectorAll('.skill')).toHaveLength(5);
+  expect(container.querySelectorAll('.skill')).toHaveLength(2);
   expect(container.querySelector('.skills-grid').textContent).toContain('GitHub');
 });
 
