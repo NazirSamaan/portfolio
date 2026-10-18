@@ -1,6 +1,6 @@
 # Nazir's Portfolio
 
-A responsive React portfolio inspired by the supplied dark navy and cyan design.
+A responsive React portfolio with a cream and lime editorial layout, project details, and an archive of original coursework.
 
 ## Run locally
 
@@ -20,6 +20,14 @@ A responsive React portfolio inspired by the supplied dark navy and cyan design.
 ## Included interactions
 
 Skill and project filtering, project detail dialogs, mobile navigation, section highlighting, a light/dark theme toggle, and a direct-submit contact form.
+
+## Portfolio archive
+
+The gallery is declared in `src/portfolioArchive.json`. Its preview images and downloadable originals live in `public/portfolio/`. Related website and C# source files are grouped into ZIP downloads. The original `Portfolio/` folder stays local and is ignored by Git.
+
+To rebuild the catalogue from that original folder, run `python scripts/import-portfolio.py`. Keep the existing website screenshots in `public/portfolio/previews/`.
+
+The college website ZIP contains about 1 GB of original videos and stays out of Git and the website build. Its preview remains visible. Until an external download is published, the card offers the full archive on request. After approval to publish the complete archive, `scripts/publish-portfolio-download.py` uploads it to GitHub Releases using the existing Git credential and updates the catalogue URL. It never writes credentials to disk.
 
 ## Check interactions
 

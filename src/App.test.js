@@ -25,6 +25,17 @@ afterEach(() => {
 });
 const click = element => act(() => element.dispatchEvent(new MouseEvent('click', { bubbles: true })));
 
+test('lists every project under development or analytics and opens its details', () => {
+  const groups = container.querySelectorAll('.work-group');
+  expect(groups).toHaveLength(2);
+  expect(groups[0].textContent).toContain('Software Development');
+  expect(groups[0].querySelectorAll('button')).toHaveLength(2);
+  expect(groups[1].textContent).toContain('Data Analytics');
+  expect(groups[1].querySelectorAll('button')).toHaveLength(3);
+  click(groups[1].querySelector('button'));
+  expect(container.querySelector('[role="dialog"]').textContent).toContain('Teen Phone Addiction Analysis');
+});
+
 test('filters project cards by category and restores all projects', () => {
   expect(container.querySelectorAll('.project-card')).toHaveLength(5);
   const buttons = Array.from(container.querySelectorAll('[aria-label="Filter projects"] button'));
@@ -76,7 +87,7 @@ test('contact form submits directly without opening Gmail', async () => {
   expect(fetch).toHaveBeenCalledWith('https://formspree.io/f/testform',expect.objectContaining({method:'POST'}));
   expect(JSON.parse(fetch.mock.calls[0][1].body)).toMatchObject({name:'Visitor',email:'visitor@gmail.com',subject:'Project idea',message:'Let us collaborate.'});
   expect(open).not.toHaveBeenCalled();
-  expect(container.querySelector('[role="status"]').textContent).toContain('submitted successfully');
+  expect(form.querySelector('[role="status"]').textContent).toContain('submitted successfully');
   expect(form.elements.message.value).toBe('');
   delete process.env.REACT_APP_FORMSPREE_ENDPOINT;
   delete global.fetch;
