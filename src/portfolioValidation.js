@@ -61,6 +61,14 @@ export function normalizeContent(input) {
         item[key] = type === 'list' ? (Array.isArray(raw[key]) ? raw[key].filter(v => typeof v === 'string').slice(0,50) : []) : type === 'checkbox' ? raw[key] === true : typeof raw[key] === 'string' ? raw[key].slice(0,10000) : type === 'color' ? '#2dd1f4' : '';
       }
       if (section === 'projects') {
+        // Refresh the original storefront copy in previously saved portfolios too.
+        if (item.title === 'Orchid E-Commerce Website') {
+          item.title = 'Orchid Refrigerator E-Commerce';
+          if (item.description === 'An online storefront concept with a curated catalog and a streamlined shopping experience.') {
+            item.description = 'A refrigerator e-commerce website concept for browsing models, viewing product details, and adding items to a shopping cart.';
+          }
+          item.features = item.features.map(feature => feature === 'Product browsing and search' ? 'Refrigerator catalog and search' : feature);
+        }
         item.visual = ['wildlife','orchid','dashboard','inventory','process','scatter'].includes(raw.visual) ? raw.visual : 'dashboard';
         item.number = String(index+1).padStart(2,'0');
       }
