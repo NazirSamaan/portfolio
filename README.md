@@ -27,7 +27,7 @@ The gallery is declared in `src/portfolioArchive.json`. Its preview images and d
 
 To rebuild the catalogue from that original folder, run `python scripts/import-portfolio.py`. Keep the existing website screenshots in `public/portfolio/previews/`.
 
-The college website ZIP contains about 1 GB of original videos and stays out of Git and the website build. Its preview remains visible. Until an external download is published, the card offers the full archive on request. After approval to publish the complete archive, `scripts/publish-portfolio-download.py` uploads it to GitHub Releases using the existing Git credential and updates the catalogue URL. It never writes credentials to disk.
+The college website showcase ZIP includes its HTML, CSS, JavaScript, images, and fonts. Large original videos stay local and are omitted from the showcase download. A README inside the ZIP explains what is included.
 
 ## Check interactions
 

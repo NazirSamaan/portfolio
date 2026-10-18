@@ -102,12 +102,17 @@ for path in sorted(SOURCE.rglob('*')):
 for folder, title in [('Programming Assignment','Student & subject management'),('Website Design 1','Kingdom Rides Cycling Club'),('Website Design 2','Bright Master College')]:
     directory = SOURCE / folder
     ident = slug(folder)
-    dest = OUT / 'files' / (ident + '.zip')
+    showcase = folder == 'Website Design 2'
+    dest = OUT / 'files' / (ident + ('-showcase.zip' if showcase else '.zip'))
     files = [p for p in directory.rglob('*') if p.is_file() and not any(x in ignored for x in p.relative_to(directory).parts)]
+    if showcase:
+        files = [p for p in files if p.suffix.lower() not in ('.mp4', '.mov', '.avi')]
     with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED,compresslevel=1) as z:
         for path in files: z.write(path,str(path.relative_to(SOURCE)))
         if folder == 'Programming Assignment':
             z.write(SOURCE / 'Programming Assignment.sln','Programming Assignment.sln')
+        if showcase:
+            z.writestr('SHOWCASE-README.txt', 'Bright Master College website showcase\n\nIncludes the original HTML pages, CSS, JavaScript, images, and fonts.\nOpen Website Design 2/home.html to view the site.\nLarge original video assets are omitted from this showcase download.\n')
     screenshot = OUT / 'previews' / (ident + '.png')
     image = screenshot if screenshot.exists() else OUT / 'previews' / (ident + '.svg')
     if not screenshot.exists():
@@ -115,12 +120,5 @@ for folder, title in [('Programming Assignment','Student & subject management'),
     entries.append(dict(id=ident,title=title,category='Software Development',type='ZIP',image='portfolio/previews/'+image.name,previewNote='Website screenshot' if screenshot.exists() else 'Source project cover',file='portfolio/files/'+dest.name,size=dest.stat().st_size,source=folder,fileCount=len(files)))
 
 entries.sort(key=lambda x: (0 if x['previewNote'] == 'Website screenshot' else 1 if x['previewNote'] in ('Original image','Image from original document') else 2 if x['type'] in ('XLSX','PBIX') else 3, x['title']))
-previous_manifest = ROOT / 'src' / 'portfolioArchive.json'
-previous_entries = json.loads(previous_manifest.read_text()) if previous_manifest.exists() else []
-for entry in entries:
-    if entry['id'] == 'website-design-2':
-        previous = next((item for item in previous_entries if item['id'] == entry['id']), {})
-        published = previous.get('file', '')
-        entry['file'] = published if published.startswith('https://github.com/NazirSamaan/portfolio/releases/download/') else ''
 (ROOT / 'src' / 'portfolioArchive.json').write_text(json.dumps(entries,indent=2),encoding='utf-8')
 print(f'Imported {len(entries)} portfolio entries. Original folders remain unchanged.')
