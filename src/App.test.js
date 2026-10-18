@@ -9,6 +9,7 @@ jest.mock('./portfolioStore', () => ({
 let container;
 let root;
 beforeEach(() => {
+  localStorage.clear();
   global.IS_REACT_ACT_ENVIRONMENT = true;
   global.IntersectionObserver = class {
     observe() {}
@@ -59,8 +60,11 @@ test('project details show the selected content and close with Escape', () => {
 });
 
 test('theme, mobile navigation, and skill filters respond to input', () => {
-  click(container.querySelector('.theme-toggle'));
   expect(container.querySelector('.site').classList.contains('light')).toBe(true);
+  click(container.querySelector('.theme-toggle'));
+  expect(container.querySelector('.site').classList.contains('light')).toBe(false);
+  expect(localStorage.getItem('portfolio-theme')).toBe('dark');
+  expect(document.documentElement.dataset.theme).toBe('dark');
   click(container.querySelector('.menu-toggle'));
   expect(container.querySelector('.menu-toggle').getAttribute('aria-expanded')).toBe('true');
   click(container.querySelector('.nav a[href="#about"]'));
@@ -69,6 +73,15 @@ test('theme, mobile navigation, and skill filters respond to input', () => {
   click(tools);
   expect(container.querySelectorAll('.skill')).toHaveLength(2);
   expect(container.querySelector('.skills-grid').textContent).toContain('GitHub');
+});
+
+test('restores the selected theme on the next visit', () => {
+  click(container.querySelector('.theme-toggle'));
+  act(() => root.unmount());
+  root = createRoot(container);
+  act(() => root.render(<App />));
+  expect(container.querySelector('.site').classList.contains('light')).toBe(false);
+  expect(container.querySelector('.theme-toggle').getAttribute('aria-label')).toBe('Switch to light theme');
 });
 
 test('contact form submits directly without opening Gmail', async () => {

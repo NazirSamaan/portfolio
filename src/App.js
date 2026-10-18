@@ -6,6 +6,7 @@ import './Editorial.css';
 import ContactForm from './ContactForm';
 import PortfolioArchive from './PortfolioArchive';
 import { experienceParagraphs } from './experienceCopy';
+import './Theme.css';
 
 const nav = ['Home', 'Projects', 'About', 'Experience', 'Skills', 'Education', 'Contact'];
 function Icon({ name, size = 20 }) {
@@ -25,7 +26,17 @@ function Portfolio() {
   const github = safeUrl(profile.github) || 'https://github.com';
   const cvUrl = safeUrl(cv.url) || `${process.env.PUBLIC_URL || ''}/NazirSamaan_CV.pdf`;
   const [menu, setMenu] = useState(false);
-  const [light, setLight] = useState(false);
+  const [light, setLight] = useState(() => {
+    try {
+      const saved = localStorage.getItem('portfolio-theme');
+      if (saved === 'light' || saved === 'dark') return saved === 'light';
+    } catch { /* Storage may be unavailable in private browser contexts. */ }
+    return !window.matchMedia?.('(prefers-color-scheme: dark)')?.matches;
+  });
+  useEffect(() => {
+    document.documentElement.dataset.theme = light ? 'light' : 'dark';
+    try { localStorage.setItem('portfolio-theme', light ? 'light' : 'dark'); } catch { /* Keep the toggle usable without storage. */ }
+  }, [light]);
   const [active, setActive] = useState('Home');
   const [skillFilter, setSkillFilter] = useState('All');
   const [projectFilter, setProjectFilter] = useState('All');
