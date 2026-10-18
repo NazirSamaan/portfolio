@@ -143,7 +143,7 @@ export const defaultContent = {
     "title": "Application Developer (Intern)",
     "organization": "Forestry Department",
     "period": "January – June 2026",
-    "description": "Sole developer of a Wildlife Management mobile app and admin panel using Flutter, PHP, and MySQL. Gathered field officers’ feedback and improved tracking and reporting workflows. Wrote maintainable code and tested system updates before deployment. Coordinated meetings between external agencies and internal management, recorded minutes, and followed up on tasks. Participated in crocodile monitoring, humane trap setup, and wildlife call responses across Brunei under government guidelines. Delivered school safety briefings and designed digital educational materials for Ministry programs.",
+    "description": "I built a Wildlife Management app and its admin panel using Flutter, PHP, and MySQL. I worked with field officers to understand their reporting needs, updated the workflows from their feedback, and tested changes before deployment.\n\nI also organised meetings, wrote minutes, and followed up on agreed tasks. Outside the development work, I joined crocodile monitoring and wildlife call responses, helped with humane trap setup, and delivered school safety briefings and digital learning materials.",
     "tags": [
       "Flutter",
       "PHP",
@@ -158,7 +158,7 @@ export const defaultContent = {
     "title": "IT Support (Intern)",
     "organization": "Jabatan Bandaran",
     "period": "April – June 2018",
-    "description": "Configured computers, monitors, and staff equipment; installed software updates, drivers, and system patches. Helped troubleshoot internet and Wi-Fi connections, repair damaged cabling, and support network checks and cable management. Built an Excel inventory using VLOOKUP and Pivot Tables to track hardware and software assets. Maintained office printers and set up meeting-room audio/visual equipment.",
+    "description": "I helped staff set up computers and office equipment, installed updates and drivers, and troubleshot internet and Wi-Fi problems. I also assisted with cabling, printer maintenance, and meeting-room audio and video equipment.\n\nI built an Excel inventory using VLOOKUP and Pivot Tables to keep track of the department's hardware and software.",
     "tags": [
       "IT Support",
       "Excel",

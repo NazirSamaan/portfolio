@@ -25,22 +25,20 @@ afterEach(() => {
 });
 const click = element => act(() => element.dispatchEvent(new MouseEvent('click', { bubbles: true })));
 
-test('lists every project under development or analytics and opens its details', () => {
-  const groups = container.querySelectorAll('.work-group');
-  expect(groups).toHaveLength(2);
-  expect(groups[0].textContent).toContain('Software Development');
-  expect(groups[0].querySelectorAll('button')).toHaveLength(2);
-  expect(groups[1].textContent).toContain('Data Analytics');
-  expect(groups[1].querySelectorAll('button')).toHaveLength(3);
-  click(groups[1].querySelector('button'));
-  expect(container.querySelector('[role="dialog"]').textContent).toContain('Teen Phone Addiction Analysis');
+test('presents work once and keeps the coursework archive closed initially', () => {
+  expect(container.querySelector('.work-index')).toBeNull();
+  expect(container.querySelectorAll('#projects')).toHaveLength(1);
+  expect(container.querySelector('.coursework-drawer').open).toBe(false);
+  expect(container.querySelector('.editorial-portrait img').getAttribute('src')).toContain('graduation.jpeg');
+  expect(container.querySelectorAll('.experience-role')).toHaveLength(2);
+  expect(container.querySelector('.role-story').textContent).toContain('I built a Wildlife Management app');
 });
 
 test('filters project cards by category and restores all projects', () => {
   expect(container.querySelectorAll('.project-card')).toHaveLength(5);
   const buttons = Array.from(container.querySelectorAll('[aria-label="Filter projects"] button'));
-  click(buttons.find(button => button.textContent === 'Mobile App'));
-  expect(container.querySelectorAll('.project-card')).toHaveLength(1);
+  click(buttons.find(button => button.textContent === 'Software Development'));
+  expect(container.querySelectorAll('.project-card')).toHaveLength(2);
   expect(container.querySelector('.project-card').textContent).toContain('Wildlife');
   click(buttons.find(button => button.textContent === 'All'));
   expect(container.querySelectorAll('.project-card')).toHaveLength(5);
