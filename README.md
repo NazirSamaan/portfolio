@@ -29,6 +29,8 @@ To rebuild the catalogue from that original folder, run `python scripts/import-p
 
 The college website showcase ZIP includes its HTML, CSS, JavaScript, images, and fonts. Large original videos stay local and are omitted from the showcase download. A README inside the ZIP explains what is included.
 
+Project details use uploaded screenshots when present, otherwise a labelled SVG illustration from `public/images/projects/`. These illustrations describe the projects without presenting measured results. Regenerate them with `python scripts/create-project-illustrations.py`.
+
 ## Check interactions
 
 `node node_modules/react-scripts/scripts/test.js --watchAll=false --runInBand`

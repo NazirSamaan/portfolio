@@ -59,6 +59,19 @@ test('project details show the selected content and close with Escape', () => {
   expect(document.activeElement).toBe(card);
 });
 
+test('every project has illustration images instead of project note placeholders', () => {
+  for (const card of container.querySelectorAll('.project-card')) {
+    click(card);
+    const dialog = container.querySelector('[role="dialog"]');
+    const pictures = dialog.querySelectorAll('.project-illustration img');
+    expect(pictures).toHaveLength(2);
+    expect(pictures[0].getAttribute('src')).toMatch(/\/images\/projects\/[a-z]+\.svg$/);
+    expect(pictures[0].getAttribute('alt')).toContain('project illustration');
+    expect(dialog.querySelector('.project-note-cover')).toBeNull();
+    act(() => document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true })));
+  }
+});
+
 test('theme, mobile navigation, and skill filters respond to input', () => {
   expect(container.querySelector('.site').classList.contains('light')).toBe(true);
   click(container.querySelector('.theme-toggle'));

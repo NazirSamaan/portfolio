@@ -21,3 +21,8 @@ html[data-theme="dark"]{background:#101915;color-scheme:dark}html[data-theme="li
 .archive-picture,.archive-card video{background:var(--panel2)}.archive-format{background:var(--panel);border-color:var(--border);color:var(--text)}.archive-links a{border-color:var(--cyan)}
 .footer{background:var(--panel2);border-color:var(--border)}.back-top{background:var(--panel);border-color:var(--border);color:var(--text)}
 .site a:focus-visible,.site button:focus-visible{outline-color:var(--cyan)}.site ::selection{background:var(--button-bg);color:var(--button-text)}
+.project-illustration{margin:0;min-width:0;overflow:hidden;border:1px solid var(--border);border-radius:8px;background:var(--panel2)}
+.project-illustration img{display:block;width:100%;height:auto;object-fit:contain}
+.project-illustration figcaption{padding:7px 12px;color:var(--muted);font-size:10px;letter-spacing:.5px}
+.dialog-hero>.project-illustration{align-self:center}
+.dialog-body .project-illustration{margin-top:20px}

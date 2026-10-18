@@ -16,7 +16,8 @@ function Icon({ name, size = 20 }) {
 function Heading({ number, title, subtitle }) { return <div className="section-heading"><span className="section-index"><Icon name="code" size={17}/>{number}</span><div><h2>{title}</h2><p>{subtitle}</p></div></div>; }
 function ProjectVisual({ type, image, title }) {
   if (safeImageUrl(image)) return <div className="project-visual uploaded-preview"><img src={safeImageUrl(image)} alt={title || 'Project screenshot'} loading="lazy"/></div>;
-  return <div className="project-note-cover"><span>PROJECT NOTES</span><strong>{title}</strong><p>Open the overview for the project details.</p></div>;
+  const visual = ['wildlife', 'orchid', 'dashboard', 'process', 'scatter', 'inventory'].includes(type) ? type : 'inventory';
+  return <figure className="project-illustration"><img src={`${process.env.PUBLIC_URL || ''}/images/projects/${visual}.svg`} alt={`${title || 'Software project'} — project illustration`} loading="lazy"/><figcaption>Project illustration</figcaption></figure>;
 }
 
 function Portfolio() {
