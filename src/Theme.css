@@ -26,3 +26,19 @@ html[data-theme="dark"]{background:#101915;color-scheme:dark}html[data-theme="li
 .project-illustration figcaption{padding:7px 12px;color:var(--muted);font-size:10px;letter-spacing:.5px}
 .dialog-hero>.project-illustration{align-self:center}
 .dialog-body .project-illustration{margin-top:20px}
+
+/* Align the edges of descriptive copy without stretching its final line. */
+.stage-note>p,
+.about-copy>p,
+.role-story>p:not(.role-tools),
+#projects .project-info>p,
+.contact-copy>p,
+.education-card p,
+.milestone-card p,
+.dialog-hero>div>p,
+.dialog-body [role="tabpanel"]>p{
+  text-align:justify;
+  text-align-last:start;
+  hyphens:auto;
+  overflow-wrap:break-word;
+}
