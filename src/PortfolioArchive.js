@@ -20,6 +20,7 @@ export default function PortfolioArchive() {
     <div id="coursework-entries" className="archive-grid">{visible.map(item => <article className="archive-card" key={item.id}>
       <a className="archive-picture" href={asset(item.image)} target="_blank" rel="noreferrer" aria-label={`View preview of ${item.title}`}><img src={asset(item.image)} alt={`${item.title} — ${item.previewNote.toLowerCase()}`} loading="lazy"/><span className="archive-format">{item.type}</span></a>
       <div className="archive-caption"><span>{item.category}</span><span>{item.previewNote}</span></div><h3>{item.title}</h3><p className="archive-source">{item.source}</p>
+      {item.modifiedDate && <p className="archive-file-date">File modified: <time dateTime={item.modifiedDate}>{new Date(`${item.modifiedDate}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</time></p>}
       {item.video && <video controls preload="none" poster={asset(item.image)} aria-label={item.title}><source src={asset(item.video)} type="video/mp4"/>Your browser does not support video playback.</video>}
       <div className="archive-links">{item.file ? <a href={asset(item.file)} download>Download {item.type} <span>↗</span><small>{fileSize(item.size)}</small></a> : <span>Full project archive available on request</span>}{item.website && <a href={item.website} target="_blank" rel="noopener noreferrer">Visit website ↗</a>}</div>
     </article>)}</div>

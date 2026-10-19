@@ -16,12 +16,14 @@ const click = element => act(() => element.dispatchEvent(new MouseEvent('click',
 
 test('shows two coursework cards and expands to all ten including notebooks', () => {
   expect(container.querySelectorAll('.archive-card')).toHaveLength(2);
+  expect(Array.from(container.querySelectorAll('.archive-card h3'), heading => heading.textContent)).toEqual(['BDA Heatmap', 'Hierarchical Clustering']);
+  expect(Array.from(container.querySelectorAll('time'), time => time.textContent)).toEqual(['31 Oct 2025', '31 Oct 2025']);
   expect(container.querySelector('.center-action button').getAttribute('aria-expanded')).toBe('false');
   click(container.querySelector('.center-action button'));
   expect(Array.from(container.querySelectorAll('.archive-card h3'), heading => heading.textContent)).toEqual([
+    'BDA Heatmap', 'Hierarchical Clustering',
     'Bright Master College', 'Kingdom Rides Cycling Club', '27_U18_A2_Nazir',
     'Database', 'DatabaseSDLC', 'Design', 'Now Opening Picture', 'Prototyping Version 2',
-    'Hierarchical Clustering', 'BDA Heatmap',
   ]);
   expect(container.querySelector('[role="status"]').textContent).toBe('10 entries');
   expect(container.querySelectorAll('.archive-card')).toHaveLength(10);

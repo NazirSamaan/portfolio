@@ -1,5 +1,29 @@
 [
   {
+    "id": "bda-heatmap",
+    "title": "BDA Heatmap",
+    "category": "Data Analytics",
+    "type": "IPYNB",
+    "image": "portfolio/previews/bda-heatmap.png",
+    "previewNote": "Chart from original notebook",
+    "file": "portfolio/files/BDA_Heatmap.ipynb",
+    "size": 60572,
+    "source": "BDA_Heatmap.ipynb",
+    "modifiedDate": "2025-10-31"
+  },
+  {
+    "id": "hierarchical-clustering",
+    "title": "Hierarchical Clustering",
+    "category": "Data Analytics",
+    "type": "IPYNB",
+    "image": "portfolio/previews/hierarchical-clustering.png",
+    "previewNote": "Chart from original notebook",
+    "file": "portfolio/files/ADM_AS2_HIERARCHICAL_CLUSTERING.ipynb",
+    "size": 152087,
+    "source": "ADM_AS2_HIERARCHICAL_CLUSTERING.ipynb",
+    "modifiedDate": "2025-10-31"
+  },
+  {
     "id": "website-design-2",
     "title": "Bright Master College",
     "category": "Software Development",
@@ -88,27 +112,5 @@
     "file": "portfolio/files/prototyping-version-2-docx-pptm.pptm",
     "size": 151628,
     "source": "Prototyping Version 2.docx.pptm"
-  },
-  {
-    "id": "hierarchical-clustering",
-    "title": "Hierarchical Clustering",
-    "category": "Data Analytics",
-    "type": "IPYNB",
-    "image": "portfolio/previews/hierarchical-clustering.png",
-    "previewNote": "Chart from original notebook",
-    "file": "portfolio/files/ADM_AS2_HIERARCHICAL_CLUSTERING.ipynb",
-    "size": 152087,
-    "source": "ADM_AS2_HIERARCHICAL_CLUSTERING.ipynb"
-  },
-  {
-    "id": "bda-heatmap",
-    "title": "BDA Heatmap",
-    "category": "Data Analytics",
-    "type": "IPYNB",
-    "image": "portfolio/previews/bda-heatmap.png",
-    "previewNote": "Chart from original notebook",
-    "file": "portfolio/files/BDA_Heatmap.ipynb",
-    "size": 60572,
-    "source": "BDA_Heatmap.ipynb"
   }
 ]
