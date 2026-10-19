@@ -26,10 +26,11 @@ afterEach(() => {
 });
 const click = element => act(() => element.dispatchEvent(new MouseEvent('click', { bubbles: true })));
 
-test('presents work once and keeps the coursework archive closed initially', () => {
+test('presents work once and previews two coursework cards initially', () => {
   expect(container.querySelector('.work-index')).toBeNull();
   expect(container.querySelectorAll('#projects')).toHaveLength(1);
-  expect(container.querySelector('.coursework-drawer').open).toBe(false);
+  expect(container.querySelectorAll('.coursework-drawer .archive-card')).toHaveLength(2);
+  expect(container.querySelector('.coursework-drawer .center-action button').textContent).toBe('Show more');
   expect(container.querySelector('.editorial-portrait img').getAttribute('src')).toContain('graduation.jpeg');
   expect(container.querySelectorAll('.experience-role')).toHaveLength(2);
   expect(container.querySelector('.role-story').textContent).toContain('I built a Wildlife Management app');
