@@ -27,6 +27,10 @@ test('shows two coursework cards and expands to all ten including notebooks', ()
   ]);
   expect(container.querySelector('[role="status"]').textContent).toBe('10 entries');
   expect(container.querySelectorAll('.archive-card')).toHaveLength(10);
+  expect(container.querySelectorAll('.archive-card time')).toHaveLength(10);
+  for (const item of archive) {
+    expect(container.querySelector(`time[datetime="${item.modifiedDate}"]`)).not.toBeNull();
+  }
   const notebooks = Array.from(container.querySelectorAll('.archive-card')).filter(card => card.querySelector('.archive-format').textContent === 'IPYNB');
   expect(notebooks).toHaveLength(2);
   for (const card of notebooks) {

@@ -33,7 +33,8 @@
     "file": "portfolio/files/website-design-2-showcase.zip",
     "size": 7284197,
     "source": "Website Design 2",
-    "fileCount": 53
+    "fileCount": 53,
+    "modifiedDate": "2020-02-12"
   },
   {
     "id": "website-design-1",
@@ -45,7 +46,8 @@
     "file": "portfolio/files/website-design-1.zip",
     "size": 10857300,
     "source": "Website Design 1",
-    "fileCount": 48
+    "fileCount": 48,
+    "modifiedDate": "2023-01-24"
   },
   {
     "id": "miss-den-27-u18-a2-nazir-docx",
@@ -56,7 +58,8 @@
     "previewNote": "Image from original document",
     "file": "portfolio/files/miss-den-27-u18-a2-nazir-docx.docx",
     "size": 10289001,
-    "source": "Miss Den/27_U18_A2_Nazir.docx"
+    "source": "Miss Den/27_U18_A2_Nazir.docx",
+    "modifiedDate": "2019-08-13"
   },
   {
     "id": "database-assignment-database-png",
@@ -67,7 +70,8 @@
     "previewNote": "Original image",
     "file": "portfolio/files/database-assignment-database-png.png",
     "size": 62266,
-    "source": "Database Assignment/Database.png"
+    "source": "Database Assignment/Database.png",
+    "modifiedDate": "2020-07-08"
   },
   {
     "id": "databasesdlc-jpg",
@@ -78,7 +82,8 @@
     "previewNote": "Original image",
     "file": "portfolio/files/databasesdlc-jpg.jpg",
     "size": 108095,
-    "source": "DatabaseSDLC.jpg"
+    "source": "DatabaseSDLC.jpg",
+    "modifiedDate": "2020-07-27"
   },
   {
     "id": "database-assignment-design-docx",
@@ -89,7 +94,8 @@
     "previewNote": "Image from original document",
     "file": "portfolio/files/database-assignment-design-docx.docx",
     "size": 94587,
-    "source": "Database Assignment/Design.docx"
+    "source": "Database Assignment/Design.docx",
+    "modifiedDate": "2020-07-08"
   },
   {
     "id": "now-opening-picture-jpg",
@@ -100,7 +106,8 @@
     "previewNote": "Original image",
     "file": "portfolio/files/now-opening-picture-jpg.jpg",
     "size": 102115,
-    "source": "Now Opening Picture.jpg"
+    "source": "Now Opening Picture.jpg",
+    "modifiedDate": "2022-04-12"
   },
   {
     "id": "prototyping-version-2-docx-pptm",
@@ -111,6 +118,7 @@
     "previewNote": "Image from original document",
     "file": "portfolio/files/prototyping-version-2-docx-pptm.pptm",
     "size": 151628,
-    "source": "Prototyping Version 2.docx.pptm"
+    "source": "Prototyping Version 2.docx.pptm",
+    "modifiedDate": "2021-08-13"
   }
 ]
